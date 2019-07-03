@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hub.social.rest.UserEndpointsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-06-11T15:10:37" hostname="CO-IT005102" time="0.143">
+  <properties/>
+  <testcase name="shouldCreate" classname="com.hub.social.rest.UserEndpointsTest" time="0.036"/>
+  <testcase name="shouldFollow" classname="com.hub.social.rest.UserEndpointsTest" time="0.027"/>
+  <testcase name="shouldReject" classname="com.hub.social.rest.UserEndpointsTest" time="0.032"/>
+  <testcase name="shouldPublish" classname="com.hub.social.rest.UserEndpointsTest" time="0.023"/>
+  <testcase name="shouldGetInbox" classname="com.hub.social.rest.UserEndpointsTest" time="0.02"/>
+  <system-out><![CDATA[2019-06-11 10:10:37.507  INFO 15148 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.hub.social.rest.UserEndpointsTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-06-11 10:10:37.515  INFO 15148 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-06-11 10:10:37.517  INFO 15148 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@33c15d1f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@482ebd88, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1801e979, org.springframework.test.context.support.DirtiesContextTestExecutionListener@24df0858, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1dcf8079, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@20b0bcb5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@37edc3fb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6bac8096, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@a0109d2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2f714933, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@765aa53d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79fd2350]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /v1/users
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+
+Handler:
+             Type = com.hub.social.rest.UserEndpoints
+           Method = public org.springframework.http.ResponseEntity<com.hub.social.rest.UserResource> com.hub.social.rest.UserEndpoints.createUser(com.hub.social.rest.CreateUserCommand) throws java.net.URISyntaxException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = {Location=[http://localhost/v1/users/bbc46c17-1af7-4e7d-9990-26c0f3775d66], Content-Type=[application/hal+json;charset=UTF-8]}
+     Content type = application/hal+json;charset=UTF-8
+             Body = {"username":"pepe","email":"email@email.com","_links":{"self":{"href":"http://localhost/v1/users/bbc46c17-1af7-4e7d-9990-26c0f3775d66"},"inbox":{"href":"http://localhost/v1/users/bbc46c17-1af7-4e7d-9990-26c0f3775d66/inbox"},"user-messages":{"href":"http://localhost/v1/users/bbc46c17-1af7-4e7d-9990-26c0f3775d66/messages"},"followers":{"href":"http://localhost/v1/users/bbc46c17-1af7-4e7d-9990-26c0f3775d66/followers"}}}
+    Forwarded URL = null
+   Redirected URL = http://localhost/v1/users/bbc46c17-1af7-4e7d-9990-26c0f3775d66
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /v1/users/7e506196-aa46-450f-8970-670c5bb8b433/followers
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+
+Handler:
+             Type = com.hub.social.rest.UserEndpoints
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> com.hub.social.rest.UserEndpoints.follow(java.util.UUID,com.hub.social.rest.FollowUserCommand,com.hub.social.rest.CommandValidator) throws com.hub.social.rest.UserNotFoundException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-06-11 10:10:37.613  WARN 15148 --- [    Test worker] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [validation-messages] not found for MessageSource: Can't find bundle for base name validation-messages, locale en_US
+2019-06-11 10:10:37.613  WARN 15148 --- [    Test worker] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [validation-messages] not found for MessageSource: Can't find bundle for base name validation-messages, locale en_US
+2019-06-11 10:10:37.613  WARN 15148 --- [    Test worker] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [validation-messages] not found for MessageSource: Can't find bundle for base name validation-messages, locale en_US
+2019-06-11 10:10:37.613  WARN 15148 --- [    Test worker] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [validation-messages] not found for MessageSource: Can't find bundle for base name validation-messages, locale en_US
+2019-06-11 10:10:37.613  WARN 15148 --- [    Test worker] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [validation-messages] not found for MessageSource: Can't find bundle for base name validation-messages, locale en_US
+2019-06-11 10:10:37.613  WARN 15148 --- [    Test worker] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [validation-messages] not found for MessageSource: Can't find bundle for base name validation-messages, locale en_US
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /v1/users
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+
+Handler:
+             Type = com.hub.social.rest.UserEndpoints
+           Method = public org.springframework.http.ResponseEntity<com.hub.social.rest.UserResource> com.hub.social.rest.UserEndpoints.createUser(com.hub.social.rest.CreateUserCommand) throws java.net.URISyntaxException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.bind.MethodArgumentNotValidException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"errors":["email.empty.message","username.empty.message"]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /v1/users/080d663f-d5be-4e23-a949-dee00d99b826/messages
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+
+Handler:
+             Type = com.hub.social.rest.UserEndpoints
+           Method = public org.springframework.http.ResponseEntity<com.hub.social.rest.MessageResource> com.hub.social.rest.UserEndpoints.publishMessage(java.util.UUID,com.hub.social.rest.PublishMessageCommand,com.hub.social.rest.CommandValidator) throws java.net.URISyntaxException,com.hub.social.rest.UserNotFoundException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = {Location=[http://localhost/v1/messages/7032e1dc-8097-40ec-b9a8-8e030f86b32a], Content-Type=[application/hal+json;charset=UTF-8]}
+     Content type = application/hal+json;charset=UTF-8
+             Body = {"body":"hello world","_links":{"author":{"href":"http://localhost/v1/users/080d663f-d5be-4e23-a949-dee00d99b826"},"self":{"href":"http://localhost/v1/messages/7032e1dc-8097-40ec-b9a8-8e030f86b32a"},"replies":{"href":"http://localhost/v1/messages/7032e1dc-8097-40ec-b9a8-8e030f86b32a/replies"}}}
+    Forwarded URL = null
+   Redirected URL = http://localhost/v1/messages/7032e1dc-8097-40ec-b9a8-8e030f86b32a
+          Cookies = []
+2019-06-11 10:10:37.655  WARN 15148 --- [    Test worker] com.hub.social.rest.RestConfiguration$1  : Failed to evaluate Jackson serialization for type [class com.hub.social.rest.PageResource]: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer]: No default constructor found; nested exception is java.lang.NoSuchMethodException: org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer.<init>()
+2019-06-11 10:10:37.656  WARN 15148 --- [    Test worker] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson serialization for type [class com.hub.social.rest.PageResource]: com.fasterxml.jackson.databind.JsonMappingException: Class org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer has no default (no arg) constructor
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /v1/users/ed8959f9-380a-48eb-beee-cffeec6d3f4a/inbox
+       Parameters = {page=[0], size=[1]}
+          Headers = {Accept=[application/hal+json]}
+
+Handler:
+             Type = com.hub.social.rest.UserEndpoints
+           Method = public org.springframework.http.ResponseEntity<com.hub.social.rest.PageResource<com.hub.social.rest.MessageResource>> com.hub.social.rest.UserEndpoints.inbox(com.hub.social.domain.InboxQuery,org.springframework.data.domain.Pageable,javax.servlet.http.HttpServletRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/hal+json;charset=UTF-8]}
+     Content type = application/hal+json;charset=UTF-8
+             Body = {"_embedded":{"messageResourceList":[{"body":"Hello world","_links":{"author":{"href":"http://localhost/v1/users/ed8959f9-380a-48eb-beee-cffeec6d3f4a"},"self":{"href":"http://localhost/v1/messages/020e890d-2bce-433c-8fff-8f12f63203fa"},"replies":{"href":"http://localhost/v1/messages/020e890d-2bce-433c-8fff-8f12f63203fa/replies"}}}]},"_links":{"self":{"href":"http://localhost/v1/users/ed8959f9-380a-48eb-beee-cffeec6d3f4a/inbox?page=0&size=1"}}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

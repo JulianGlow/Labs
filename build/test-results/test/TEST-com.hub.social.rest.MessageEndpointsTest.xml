@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hub.social.rest.MessageEndpointsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-06-11T15:10:37" hostname="CO-IT005102" time="0.338">
+  <properties/>
+  <testcase name="filterMessages" classname="com.hub.social.rest.MessageEndpointsTest" time="0.181"/>
+  <testcase name="shouldReply" classname="com.hub.social.rest.MessageEndpointsTest" time="0.144"/>
+  <testcase name="shouldGetMessage" classname="com.hub.social.rest.MessageEndpointsTest" time="0.01"/>
+  <system-out><![CDATA[2019-06-11 10:10:33.740  INFO 15148 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.hub.social.rest.MessageEndpointsTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-06-11 10:10:33.755  INFO 15148 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-06-11 10:10:33.761  INFO 15148 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2ad1cf48, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1ad061f4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@32932bdd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@143e668, org.springframework.test.context.transaction.TransactionalTestExecutionListener@25ccd287, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3c8ad80b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@17ecd184, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@90215b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4a99a6fa, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@20b97522, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5128f040, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@489ef87f]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.1.RELEASE)
+
+2019-06-11 10:10:34.164  INFO 15148 --- [    Test worker] c.hub.social.rest.MessageEndpointsTest   : Starting MessageEndpointsTest on CO-IT005102 with PID 15148 (started by julian.tobon in C:\Users\julian.tobon\Desktop\rest-master)
+2019-06-11 10:10:34.164  INFO 15148 --- [    Test worker] c.hub.social.rest.MessageEndpointsTest   : No active profile set, falling back to default profiles: default
+2019-06-11 10:10:34.167  INFO 15148 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2e6fdd95: startup date [Tue Jun 11 10:10:34 COT 2019]; root of context hierarchy
+2019-06-11 10:10:35.114  INFO 15148 --- [    Test worker] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-06-11 10:10:35.205  INFO 15148 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-11 10:10:35.217  INFO 15148 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-11 10:10:35.237  INFO 15148 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e13596e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-11 10:10:35.881  INFO 15148 --- [    Test worker] liquibase                                : Successfully acquired change log lock
+2019-06-11 10:10:35.885  INFO 15148 --- [    Test worker] liquibase                                : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-06-11 10:10:35.887  INFO 15148 --- [    Test worker] liquibase                                : Reading from PUBLIC.DATABASECHANGELOG
+2019-06-11 10:10:35.900  INFO 15148 --- [    Test worker] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::andres.postiglioni: SQL in file db/changelog/migrations/v001.up.sql executed
+2019-06-11 10:10:35.901  INFO 15148 --- [    Test worker] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::andres.postiglioni: ChangeSet classpath:/db/changelog/db.changelog-master.yaml::1::andres.postiglioni ran successfully in 12ms
+2019-06-11 10:10:35.904  INFO 15148 --- [    Test worker] liquibase                                : Successfully released change log lock
+2019-06-11 10:10:36.040  INFO 15148 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-06-11 10:10:36.040  INFO 15148 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-11 10:10:36.058  INFO 15148 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-11 10:10:36.087  WARN 15148 --- [    Test worker] o.h.j.i.EntityManagerFactoryRegistry     : HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2019-06-11 10:10:36.087  INFO 15148 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-11 10:10:36.369  INFO 15148 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2019-06-11 10:10:36.369  INFO 15148 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2019-06-11 10:10:36.475  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.hub.social.rest.ApiResource> com.hub.social.rest.ApiEndpoints.entrtypoint()
+2019-06-11 10:10:36.475  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/messages/{messageId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.hub.social.rest.MessageResource> com.hub.social.rest.MessageEndpoints.get(com.hub.social.domain.GetMessageByIdQuery) throws com.hub.social.rest.MessageNotFoundException
+2019-06-11 10:10:36.476  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/messages/{messageId}/replies],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.hub.social.rest.MessageResource> com.hub.social.rest.MessageEndpoints.reply(java.util.UUID,com.hub.social.rest.ReplyMessageCommand,com.hub.social.rest.CommandValidator) throws com.hub.social.rest.MessageNotFoundException,com.hub.social.rest.UserNotFoundException,java.net.URISyntaxException
+2019-06-11 10:10:36.476  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/messages],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.hub.social.rest.PageResource<com.hub.social.rest.MessageResource>> com.hub.social.rest.MessageEndpoints.getMessages(com.hub.social.domain.FindMessageQuery,javax.servlet.http.HttpServletRequest,org.springframework.data.domain.Pageable)
+2019-06-11 10:10:36.477  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/users/{userId}/followers],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.hub.social.rest.UserEndpoints.follow(java.util.UUID,com.hub.social.rest.FollowUserCommand,com.hub.social.rest.CommandValidator) throws com.hub.social.rest.UserNotFoundException
+2019-06-11 10:10:36.477  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/users/{userId}/messages],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.hub.social.rest.MessageResource> com.hub.social.rest.UserEndpoints.publishMessage(java.util.UUID,com.hub.social.rest.PublishMessageCommand,com.hub.social.rest.CommandValidator) throws java.net.URISyntaxException,com.hub.social.rest.UserNotFoundException
+2019-06-11 10:10:36.478  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/users/{userId}/inbox],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.hub.social.rest.PageResource<com.hub.social.rest.MessageResource>> com.hub.social.rest.UserEndpoints.inbox(com.hub.social.domain.InboxQuery,org.springframework.data.domain.Pageable,javax.servlet.http.HttpServletRequest)
+2019-06-11 10:10:36.478  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.hub.social.rest.UserResource> com.hub.social.rest.UserEndpoints.createUser(com.hub.social.rest.CreateUserCommand) throws java.net.URISyntaxException
+2019-06-11 10:10:36.481  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-11 10:10:36.482  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-11 10:10:36.518  INFO 15148 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-11 10:10:36.519  INFO 15148 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-11 10:10:36.536  INFO 15148 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-11 10:10:36.703  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@2e6fdd95: startup date [Tue Jun 11 10:10:34 COT 2019]; root of context hierarchy
+2019-06-11 10:10:36.705  INFO 15148 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Detected @ModelAttribute methods in modelBinder
+2019-06-11 10:10:36.742  INFO 15148 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in notFoundExceptionHandler
+2019-06-11 10:10:36.742  INFO 15148 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in validationExceptionHandler
+2019-06-11 10:10:36.742  INFO 15148 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in catchAllExceptionHandler
+2019-06-11 10:10:36.789  INFO 15148 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 420 ms
+2019-06-11 10:10:37.162  INFO 15148 --- [    Test worker] c.hub.social.rest.MessageEndpointsTest   : Started MessageEndpointsTest in 3.392 seconds (JVM running for 15.657)
+2019-06-11 10:10:37.292  WARN 15148 --- [    Test worker] com.hub.social.rest.RestConfiguration$1  : Failed to evaluate Jackson serialization for type [class com.hub.social.rest.PageResource]: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer]: No default constructor found; nested exception is java.lang.NoSuchMethodException: org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer.<init>()
+2019-06-11 10:10:37.293  WARN 15148 --- [    Test worker] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson serialization for type [class com.hub.social.rest.PageResource]: com.fasterxml.jackson.databind.JsonMappingException: Class org.springframework.hateoas.hal.Jackson2HalModule$HalResourcesSerializer has no default (no arg) constructor
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /v1/messages
+       Parameters = {authorName=[pepe], page=[0], size=[1]}
+          Headers = {}
+
+Handler:
+             Type = com.hub.social.rest.MessageEndpoints
+           Method = public org.springframework.http.ResponseEntity<com.hub.social.rest.PageResource<com.hub.social.rest.MessageResource>> com.hub.social.rest.MessageEndpoints.getMessages(com.hub.social.domain.FindMessageQuery,javax.servlet.http.HttpServletRequest,org.springframework.data.domain.Pageable)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/hal+json;charset=UTF-8]}
+     Content type = application/hal+json;charset=UTF-8
+             Body = {"_embedded":{"messageResourceList":[{"body":"m1","_links":{"author":{"href":"http://localhost/v1/users/1521b5bf-c2cf-4053-b165-020a002ea5ec"},"self":{"href":"http://localhost/v1/messages/ea2a2f1e-3faf-48d9-a3ab-871e66ade3b4"},"replies":{"href":"http://localhost/v1/messages/ea2a2f1e-3faf-48d9-a3ab-871e66ade3b4/replies"}}},{"body":"m2","_links":{"author":{"href":"http://localhost/v1/users/1521b5bf-c2cf-4053-b165-020a002ea5ec"},"self":{"href":"http://localhost/v1/messages/2cc1e164-213e-4c9d-adab-6bf884c1ffd6"},"replies":{"href":"http://localhost/v1/messages/2cc1e164-213e-4c9d-adab-6bf884c1ffd6/replies"}}}]},"_links":{"self":{"href":"http://localhost/v1/messages?authorName=pepe&page=0&size=1"},"next":{"href":"http://localhost/v1/messages?authorName=pepe&size=1&page=1"}}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /v1/messages/14b1d5c0-125d-43de-a274-c4007aeb75c5/replies
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+
+Handler:
+             Type = com.hub.social.rest.MessageEndpoints
+           Method = public org.springframework.http.ResponseEntity<com.hub.social.rest.MessageResource> com.hub.social.rest.MessageEndpoints.reply(java.util.UUID,com.hub.social.rest.ReplyMessageCommand,com.hub.social.rest.CommandValidator) throws com.hub.social.rest.MessageNotFoundException,com.hub.social.rest.UserNotFoundException,java.net.URISyntaxException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = {Location=[http://localhost/v1/messages/7303f35c-326c-40e6-a210-91b3c6295587], Content-Type=[application/hal+json;charset=UTF-8]}
+     Content type = application/hal+json;charset=UTF-8
+             Body = {"body":"This is my reply","_links":{"author":{"href":"http://localhost/v1/users/5b91425d-d7de-47f3-a270-c4844de93782"},"self":{"href":"http://localhost/v1/messages/7303f35c-326c-40e6-a210-91b3c6295587"},"replies":{"href":"http://localhost/v1/messages/7303f35c-326c-40e6-a210-91b3c6295587/replies"}}}
+    Forwarded URL = null
+   Redirected URL = http://localhost/v1/messages/7303f35c-326c-40e6-a210-91b3c6295587
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /v1/messages/b3cbadbe-3ca6-4b6b-a33f-9910c8b40e95
+       Parameters = {}
+          Headers = {}
+
+Handler:
+             Type = com.hub.social.rest.MessageEndpoints
+           Method = public org.springframework.http.ResponseEntity<com.hub.social.rest.MessageResource> com.hub.social.rest.MessageEndpoints.get(com.hub.social.domain.GetMessageByIdQuery) throws com.hub.social.rest.MessageNotFoundException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/hal+json;charset=UTF-8]}
+     Content type = application/hal+json;charset=UTF-8
+             Body = {"body":"Hello world","_links":{"author":{"href":"http://localhost/v1/users/fea9fd2c-b3a3-4c34-aead-f781d0493096"},"self":{"href":"http://localhost/v1/messages/b3cbadbe-3ca6-4b6b-a33f-9910c8b40e95"},"replies":{"href":"http://localhost/v1/messages/b3cbadbe-3ca6-4b6b-a33f-9910c8b40e95/replies"}}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
